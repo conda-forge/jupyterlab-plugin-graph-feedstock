@@ -1,5 +1,5 @@
 {% set name = "jupyterlab-plugin-graph" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 
 
 package:
@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9131fa511e2219aa502e7af86ae5e86dd07d64ec91d33188c910df0ce490ccfa
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 6c43f0782879a3f6c0591d5a46627a9173380447a306a30232141d62744d8d33
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -35,7 +35,7 @@ test:
 
 about:
   home: https://github.com/jupyterlab-contrib/jupyterlab-plugin-graph
-  summary: JupyterLab extension to show an interactive dependency graph of the installed plugins 
+  summary: JupyterLab extension to show an interactive dependency graph of the installed plugins
   license: BSD-3-Clause
   license_file: LICENSE
 
